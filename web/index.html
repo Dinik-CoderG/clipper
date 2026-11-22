@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clip Maker: Turn Videos into Clips | Clipper</title>
+  <meta name="description" content="Paste a YouTube link and Clipper cuts captioned vertical clips for TikTok, Reels, and Shorts. Long videos and podcasts, no download.">
+  <meta name="theme-color" content="#1677f2">
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#fff"/></symbol>
+    <symbol id="i-twitch" viewBox="0 0 24 24"><path fill="#9146ff" d="M4 2 2.5 5.5V20H7v2.5h2.5L12 20h3.5l5-5V2zm14.5 12-3 3H12l-2.5 2.5V17H6V4h12.5z"/><path fill="#9146ff" d="M15 7h2v5h-2zm-5 0h2v5h-2z"/></symbol>
+    <symbol id="i-kick" viewBox="0 0 24 24"><path fill="#53fc18" d="M3 3h6v5h2V6h2V3h6v6h-2v2h-2v2h2v2h2v6h-6v-3h-2v-2H9v5H3z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  </svg>
+
+  <nav class="nav">
+    <a class="brand" href="/"><img src="/logo.svg" alt="">Clipper</a>
+    <div class="nav-links">
+      <a class="chev" href="#features">Features</a>
+      <a class="chev" href="/twitch-clip-maker">Use Cases</a>
+      <a href="#faq">Pricing</a>
+      <a href="#how">Docs</a>
+    </div>
+    <a class="btn-pill" href="#studio" id="nav-cta">My clips <svg width="16" height="16"><use href="#i-arrow"/></svg></a>
+  </nav>
+
+  <main class="wrap">
+    <section class="blue-card hero" id="top">
+      <div class="hero-icon"><svg id="hero-icon"><use href="#i-youtube"/></svg></div>
+      <p class="eyebrow"><span data-p="name">YouTube</span> video clipping</p>
+      <h1 class="display">Turn <span data-p="name">YouTube</span> videos into <span class="cycle"><span class="slot" id="cycle">clips</span></span></h1>
+      <p class="sub">Paste a <span data-p="name">YouTube</span> link. Get your best moments back as clips, ready to post.</p>
+      <form class="link-form" data-form>
+        <svg width="20" height="20"><use href="#i-link"/></svg>
+        <input type="url" name="url" required autocomplete="off" spellcheck="false" aria-label="Video link">
+        <button class="btn-blue" type="submit">Get clips →</button>
+      </form>
+      <div class="options">
+        <label>Clips <select id="opt-count"><option>3</option><option selected>6</option><option>10</option><option>15</option></select></label>
+        <label><input type="checkbox" id="opt-captions" checked> Captions</label>
+        <label>Highlight <input type="color" id="opt-color" value="#ffe600"></label>
+      </div>
+      <p class="hero-note">Full videos up to <b>3 hours</b></p>
+    </section>
+
+    <div class="tabs" role="tablist">
+      <button class="tab" data-tab="twitch" role="tab"><svg><use href="#i-twitch"/></svg>Twitch</button>
+      <button class="tab active" data-tab="youtube" role="tab"><svg><use href="#i-youtube"/></svg>YouTube</button>
+      <button class="tab" data-tab="kick" role="tab"><svg><use href="#i-kick"/></svg>Kick</button>
+    </div>
+
+    <section class="panel studio" id="studio" hidden>
+      <div class="job-head">
+        <img id="job-thumb" alt="">
+        <div>
+          <h3 id="job-title">Getting your video…</h3>
+          <div class="muted" id="job-sub"></div>
+        </div>
+      </div>
+      <div class="stepper" id="stepper">
+        <div data-stage="download"><i><b></b></i>Pull video</div>
+        <div data-stage="transcribe"><i><b></b></i>Transcribe</div>
+        <div data-stage="moments"><i><b></b></i>Find best moments</div>
+        <div data-stage="render"><i><b></b></i>Cut &amp; caption</div>
+      </div>
+      <div class="status-line" id="status"><span class="spinner"></span><span id="status-text">Waiting in line…</span></div>
+      <div class="clips" id="clips"></div>
+      <div class="recent" id="recent" hidden><h4>Recent videos</h4><div id="recent-list"></div></div>
+    </section>
+
+    <section class="panel reveal" id="how">
+      <h2 class="section-title display">Three steps, zero editing</h2>
+      <div class="grid grid-3">
+        <div class="card"><div class="step-head"><span class="num">1</span><span>Drop your <span data-p="name">YouTube</span> link</span></div><p data-p="step1">Any youtube.com or youtu.be link works. We pull the whole video, even a long podcast. No download.</p></div>
+        <div class="card"><div class="step-head"><span class="num">2</span>We grab your best moments</div><p>Clipper scans the full video, cuts vertical clips, keeps the speaker in frame, and adds captions.</p></div>
+        <div class="card"><div class="step-head"><span class="num">3</span>Post them everywhere</div><p>Download your clips and post them straight to TikTok, Reels, Shorts, and more.</p></div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
+      <h2 class="section-title display">One link. No downloading, no re-uploading</h2>
+      <div class="grid grid-4">
+        <div class="card vs"><s>Download the file first</s><strong>Just paste the link</strong></div>
+        <div class="card vs"><s>Short uploads only</s><strong>Full videos &amp; podcasts</strong></div>
+        <div class="card vs"><s>Re-upload every video</s><strong>One link, done</strong></div>
+        <div class="card vs"><s>One platform</s><strong>YouTube, Twitch &amp; Kick</strong></div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <h2 class="section-title display">Dozens of clips from one video</h2>
+      <div class="phones" id="phones">
+        <div class="phone mock"><div class="scene" style="background:linear-gradient(160deg,#ff4a1c,#7a1405 70%,#1b0b06)"></div><div class="person" style="--shirt:#0f2a2a"></div><div class="cap">The <em>biggest</em> mistake</div></div>
+        <div class="phone mock"><div class="scene" style="background:linear-gradient(170deg,#8a6a45,#3a2a1c 70%,#1b130c)"></div><div class="person" style="--shirt:#3ea6e0"></div><div class="cap">Nobody tells you <em>this</em></div></div>
+        <div class="phone mock"><div class="scene" style="background:linear-gradient(170deg,#7f97ad,#2c3a48 70%,#11171d)"></div><div class="person" style="--shirt:#121a20"></div><div class="cap">Here's what <em>actually</em> works</div></div>
+      </div>
+    </section>
+
+    <section class="block reveal" id="features">
+      <h2 class="section-title display">Every clip, done for you</h2>
+      <div class="grid grid-4">
+        <div class="card feat"><h3>Your best moments</h3><p>Clipper finds the hooks across the whole video, not just the intro.</p></div>
+        <div class="card feat"><h3>Captions, your style</h3><p>Word-by-word captions burned in. 99 languages.</p></div>
+        <div class="card feat"><h3>Keeps faces in frame</h3><p>Auto face-tracking centers the speaker when it goes vertical.</p></div>
+        <div class="card feat"><h3>Clip to posted</h3><p>1080×1920 MP4s, ready for TikTok, Reels, and Shorts.</p></div>
+      </div>
+    </section>
+
+    <section class="block reveal" id="faq">
+      <h2 class="section-title display">Answers</h2>
+      <div class="faq">
+        <details><summary><span>Can I clip a <span data-p="name">YouTube</span> video without downloading it?</span></summary><p>Yes. Paste the link and Clipper pulls the full video for you. You never have to download or re-upload anything yourself.</p></details>
+        <details><summary>Does it work with long videos and podcasts?</summary><p>Yes. Full videos up to 3 hours work, including multi-hour podcasts. Clipper scans the whole thing for the best moments.</p></details>
+        <details><summary>Does it work with Twitch and Kick too?</summary><p>Yes. Paste a Twitch or Kick VOD link and the same flow works.</p></details>
+        <details><summary>Does Clipper add captions automatically?</summary><p>Yes. Every clip gets word-by-word captions burned in, and face-tracking keeps the speaker centered in the vertical frame.</p></details>
+        <details><summary>How much does it cost?</summary><p>Nothing. Clipper runs on your own machine. Set an Anthropic API key to have Claude choose the moments; without one, a built-in scorer picks them. No watermark either way.</p></details>
+      </div>
+    </section>
+
+    <section class="blue-card cta reveal">
+      <h2 class="display">Paste a video. Get clips</h2>
+      <p>Start with your last upload. Clips in a few minutes.</p>
+      <form class="link-form" data-form>
+        <svg width="20" height="20"><use href="#i-link"/></svg>
+        <input type="url" name="url" required autocomplete="off" spellcheck="false" aria-label="Video link">
+        <button class="btn-blue" type="submit">Get clips →</button>
+      </form>
+    </section>
+
+    <div class="anywhere">
+      <h4>Clip from anywhere</h4>
+      <div class="chips">
+        <a class="chip" href="/twitch-clip-maker"><svg><use href="#i-twitch"/></svg>Twitch clip maker</a>
+        <a class="chip" href="/kick-clip-maker"><svg><use href="#i-kick"/></svg>Kick clip maker</a>
+        <a class="chip" href="/youtube-clip-maker"><svg><use href="#i-youtube"/></svg>YouTube clip maker</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand"><a class="brand" href="/"><img src="/logo.svg" alt="">Clipper</a><p>The AI clip maker for creators and brands.</p></div>
+        <div class="foot-col"><h5>PRODUCT</h5><a href="#features">Features</a><a href="#faq">Pricing</a><a href="#how">How it works</a></div>
+        <div class="foot-col"><h5>CLIP FROM</h5><a href="/youtube-clip-maker">YouTube</a><a href="/twitch-clip-maker">Twitch</a><a href="/kick-clip-maker">Kick</a></div>
+        <div class="foot-col"><h5>YOUR CLIPS</h5><a href="#studio" data-open-studio>Recent videos</a></div>
+        <div class="foot-col"><h5>CONNECT</h5><a href="/docs">API (/docs)</a></div>
+      </div>
+      <div class="foot-bottom"><span>© 2026 Clipper. Runs locally.</span><span>The AI clip maker for creators and brands.</span></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">Clipper</div>
+  </footer>
+
+  <div class="cookie" id="cookie" hidden>
+    <span>Clipper stores your recent jobs in this browser. Nothing leaves your machine except the video download.</span>
+    <button id="cookie-ok">OK</button>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

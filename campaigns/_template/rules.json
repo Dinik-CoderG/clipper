@@ -1,0 +1,51 @@
+{
+  "name": "Example Game - Trailer Clipping",
+  "agency": "Example Agency",
+  "url": "https://contentrewards.com/c/campaigns/<campaign-id>",
+  "brief": "brief/<brief file>.pdf",
+  "footage": "official content folder only",
+  "platforms": {
+    "instagram": {
+      "per_1k": 1.35,
+      "min_payout": 4.0,
+      "max_payout": 1200
+    },
+    "tiktok": {
+      "per_1k": 1.85,
+      "min_payout": 5.0,
+      "max_payout": 1200
+    }
+  },
+  "must_include": [
+    "@examplegame"
+  ],
+  "disclosure": {
+    "options": [
+      "#Ad",
+      "#Advertisement",
+      "#Sponsored"
+    ],
+    "own_line": true,
+    "first_hashtag": true
+  },
+  "max_extra_hashtags": 3,
+  "banned_words": [
+    "gameplay"
+  ],
+  "length": {
+    "min": null,
+    "max": null
+  },
+  "music": "official folder only; add no Instagram/TikTok sound",
+  "violence_banned": true,
+  "ai_voice_banned": true,
+  "keep_live_days": 30,
+  "max_reposts": 5,
+  "engagement_min": 0.005,
+  "likes_visible": true,
+  "notes": [
+    "Copy the brief's rules here word for word",
+    "No made-up facts, stats or dates"
+  ],
+  "allowed_names": []
+}

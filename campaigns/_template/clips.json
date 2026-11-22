@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01_example_moment",
+    "source": "SourceFileNameWithoutMp4",
+    "start": 12.0,
+    "end": 30.0,
+    "hook": "Short hook with a *highlighted phrase* 💀",
+    "cover": 20.0,
+    "cues": [
+      [14.0, 16.5, "Speaker", "Exact in-game subtitle line."]
+    ]
+  },
+  {
+    "id": "02_example_with_auto_captions",
+    "source": "SourceFileNameWithoutMp4",
+    "start": 40.0,
+    "end": 58.0,
+    "hook": "Second hook *goes here* 🔥",
+    "captions": "whisper",
+    "frame": "2_neon_coffee_table"
+  }
+]

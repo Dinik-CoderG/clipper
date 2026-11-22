@@ -1,0 +1,38 @@
+[
+  {
+    "id": "01",
+    "title": "Example campaign post",
+    "file": "clips/01_example.mp4",
+    "cover": "covers/01_example.jpg",
+    "platforms": [
+      "instagram",
+      "tiktok"
+    ],
+    "date": "2026-01-01",
+    "time": "20:30",
+    "hook": "Short hook with a *highlighted phrase* 🔥",
+    "caption": "One-line caption using only facts from the brief @examplegame\n\n#Ad\n#ExampleGame #Gaming",
+    "yt_title": "",
+    "pinned": "A question for the comments 👇",
+    "audio": "Keep the footage's own audio unless the brief allows added music.",
+    "why": "Why this moment should work (format, hook, past results)."
+  },
+  {
+    "id": "own01",
+    "organic": true,
+    "title": "Example organic post",
+    "file": "clips/own01_example.mp4",
+    "cover": "covers/own01_example.jpg",
+    "platforms": [
+      "instagram"
+    ],
+    "date": "2026-01-01",
+    "time": "18:00",
+    "hook": "Nobody noticed this *detail* 👀",
+    "caption": "Nobody noticed this detail 👀 Did you catch it the first time?\n\n#gaming #gamingcommunity",
+    "yt_title": "",
+    "pinned": "Drop another detail you found 👇",
+    "audio": "Original game audio",
+    "why": "Detail/comparison reels tend to do well for gaming pages."
+  }
+]

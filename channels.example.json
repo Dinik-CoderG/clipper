@@ -1,0 +1,36 @@
+[
+  {
+    "id": "example.gaming",
+    "name": "Example Gaming",
+    "niche": ["gaming", "vr", "fps", "trailer"],
+    "platforms": ["instagram", "youtube"],
+    "instagram": "example.gaming",
+    "youtube": "@examplegaming",
+    "content_rewards_account": "example.gaming",
+    "followers": null,
+    "tier1_pct": null,
+    "avoid": ["gambling", "adult", "crypto", "violent"],
+    "max_posts_per_day": 3,
+    "post_times_ist": ["20:30", "23:00"],
+    "frame": "setup_main",
+    "frame_variants": ["setup_red"],
+    "style": "desk-frame cinematic; hook line above the monitor; 1-2 reels a day",
+    "skip_campaigns": []
+  },
+  {
+    "id": "example.shorts",
+    "name": "Example Shorts",
+    "niche": ["streamer", "podcast", "entertainment", "irl"],
+    "platforms": ["youtube"],
+    "instagram": "",
+    "youtube": "@exampleshorts",
+    "content_rewards_account": "@exampleshorts",
+    "followers": null,
+    "tier1_pct": null,
+    "avoid": ["gambling", "adult", "crypto", "violent"],
+    "max_posts_per_day": 3,
+    "post_times_ist": ["20:30", "23:00"],
+    "style": "streamer and show highlights as YouTube Shorts; full-screen or wide layout, no desk frame; hook in frame 1, word captions for speech",
+    "skip_campaigns": []
+  }
+]

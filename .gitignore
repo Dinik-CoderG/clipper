@@ -1,0 +1,65 @@
+# ---- kept from the original .gitignore
+jobs/
+.venv/
+__pycache__/
+.remember/
+clips/
+.env
+
+# ---- secrets and personal data (never commit)
+.env.*
+!.env.example
+channels.json
+likeness/
+own/
+streams/
+inbox/
+learn/
+channels/
+discover/
+.playwright-mcp/
+.venv-voice/
+*.pyc
+
+# ---- campaigns: only the template and the README
+campaigns/*
+!campaigns/_template/
+!campaigns/README.md
+
+# ---- media and documents
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.zip
+*.pdf
+*.ics
+# small images the web UI needs (only logo.svg today; svg isn't excluded)
+!web/*.png
+!web/*.jpg
+
+# ---- frame data, previews and experiments
+/frames/*
+!/frames/setup_*.png
+!/frames/setup_*.json
+reels/frames/debug/
+reels/frames/experimental/
+
+
+
+# ---- logs and partial downloads
+*.log
+*.err
+*.part
+*.done
+# frame assets the tool needs (desk frames, real-photo rooms and their warp maps)
+!reels/frames/real/*.jpg
+!reels/frames/real/*.png
+!reels/frames/real/assets/*/*.png
